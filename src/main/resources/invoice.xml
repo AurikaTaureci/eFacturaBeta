@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:Invoice xmlns:ns2="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2">
+    <name>John</name>
+    <age>30</age>
+</ns2:Invoice>
