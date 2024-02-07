@@ -1,17 +1,22 @@
 package com.example.eFacturaBeta.model;
-//import javax.xml.bind.annotation.*;
 
+import com.sun.xml.txw2.annotation.XmlNamespace;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jdk.jfr.Name;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "Invoice",namespace = "urn:oasis:names:specification:ubl:schema:xsd:Invoice-2")
+@XmlRootElement(name = "Invoice")
+//@XmlType(namespace = "urn:oasis:names:specification:ubl:schema:xsd:Invoice-2")
+//@XmlType(propOrder = {"name", "age"})
+//@XmlNamespace(value = XmlNs()
+//@XmlElement(name ="" ,namespace = "urn:oasis:names:specification:ubl:schema:xsd:Invoice-2")
 @XmlAccessorType(XmlAccessType.FIELD)
 @Getter
 @Setter
@@ -20,14 +25,22 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 public class Invoice {
 
-        @XmlElement
-        private String name;
+    @XmlElement(name = "CustomizationID", namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+    private String name;
 
-        @XmlElement
-        private int age;
+    @XmlElement(name = "ID", namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+    private String noInvoice;
 
-        // Constructors, getters, and setters
-    }
+
+    @XmlElement
+    private int age;
+
+    // Constructors, getters, and setters
+//        @XmlTransient
+//        private String namespacePrefix;
+
+
+}
 
 
 
